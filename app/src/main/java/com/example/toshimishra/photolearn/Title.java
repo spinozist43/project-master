@@ -6,22 +6,38 @@ import  java.util.*;
  */
 
 public abstract  class Title {
-    Integer ID;
-    String userID;
-    String title;
-    Integer sessionID;
-    Date timeStamp;
-    ArrayList <Item> Items;
 
+    private String userID;
+    private String title;
+    private Integer sessionID;
+    private Date timeStamp;
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Integer getSessionID() {
+        return sessionID;
+    }
+
+    public Date getTimeStamp() {
+        return timeStamp;
+    }
+
+    public Title(){
+
+    }
     public  Title(String userID,String title,Integer sessionID){
         this.userID = userID;
         this.title = title;
         this.sessionID = sessionID;
         // TODO : set timestamp and ID
     }
-    public abstract void deleteTitle();
-    public void addItem(Item i){
-        Items.add(i);
-    }
+
+
 
 }

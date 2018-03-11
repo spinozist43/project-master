@@ -18,13 +18,9 @@ public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAd
     private LayoutInflater mInflater;
     private OnItemClickListener mOnItemClickListener;
 
-    public SampleRecyclerAdapter(Context context){
+    public SampleRecyclerAdapter(Context context,List<String> dataSet){
 
-        mDatas = new ArrayList<>();
-
-        for (int i = 0; i < Strings.sCheeseStrings.length; i++) {
-            mDatas.add(Strings.sCheeseStrings[i]);
-        }
+        mDatas = dataSet;
 
         mContext = context;
         mInflater = LayoutInflater.from(mContext);

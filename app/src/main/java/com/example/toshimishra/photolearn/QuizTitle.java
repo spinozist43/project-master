@@ -12,11 +12,8 @@ public class QuizTitle extends Title {
 
     public void addQuizItem(String titleID,String photoURL, String options[],boolean isOptionAns[],String ansExp){
         QuizItem i = new QuizItem(titleID,photoURL,options,isOptionAns,ansExp);
-        addItem(i);
+
         //TODO UPdate DB
     }
-    @Override
-    public  void deleteTitle(){
-// TODO overrinding for only permissions?????
-    }
+
 }

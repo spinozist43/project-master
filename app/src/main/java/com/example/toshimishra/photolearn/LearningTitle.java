@@ -14,11 +14,6 @@ public class LearningTitle extends Title {
     }
     public void addLearningItem(String titleID,String photoURL,String photoDesc, String GPS){
         LearningItem l = new LearningItem(titleID,photoURL,photoDesc,GPS,this.userID);
-        addItem(l);
         //TODO update DB
-    }
-    @Override
-    public  void deleteTitle(){
-
     }
 }

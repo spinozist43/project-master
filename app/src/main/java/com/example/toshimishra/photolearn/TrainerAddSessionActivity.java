@@ -59,6 +59,7 @@ public class TrainerAddSessionActivity extends Activity{
                 Date date = new GregorianCalendar(mYear, mMonth, mDay).getTime();
                 Trainer t = new Trainer();
                 t.createLearningSession(date,moduleNumber,courseCode);
+                startActivity(new Intent(   TrainerAddSessionActivity.this, TrainerSessionsActivity.class));
 
             }
         });

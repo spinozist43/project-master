@@ -15,11 +15,13 @@ import java.util.*;
  */
 
 public class Trainer{
-    static FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    public String getUid(){
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
     public void createLearningSession(Date date,Integer moduleNumber, String courseCode) {
-        final LearningSession s = new LearningSession(user.getUid(), date, moduleNumber, courseCode);
+        final LearningSession s = new LearningSession(getUid(), date, moduleNumber, courseCode);
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("Users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+        mDatabase.child("Users").child(getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -38,7 +40,7 @@ public class Trainer{
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("LearningSessions").child(s.getSessionID()).setValue(s);
-        mDatabase.child("Users-LearningSessions").child(user.getUid()).child(s.getSessionID()).setValue(s);
+        mDatabase.child("Users-LearningSessions").child(getUid()).child(s.getSessionID()).setValue(s);
         //todo cleanup
         /*Map<String, Object> add = new HashMap<>();
         add.put("/LearningSessions/" + s.getSessionID(), s);
@@ -51,5 +53,7 @@ public class Trainer{
 
     }
 
-    public void createQuizTitle(String Title){}
+    public void createQuizTitle(String Title){
+
+    }
 }

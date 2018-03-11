@@ -15,6 +15,10 @@ public class LearningSession {
     private String courseCode;
     private Integer moduleNumber;
 
+    public LearningSession(){
+
+    }
+
     public LearningSession(String userID, Date date, Integer moduleNumber, String courseCode) {
         this.sessionID = formatDate(date) + courseCode + moduleNumber.toString();
         this.userID = userID;
